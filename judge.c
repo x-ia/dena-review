@@ -122,7 +122,10 @@ t_board	*judge(t_board *board, int col, int row)
 	else
 	{
 		if(check_filled(board))
+		{
 			board->msg = MSG_DRAW;
+			board->status = 0;
+		}
 		else
 			board->msg = MSG_TURN;
 		board->status = board->status % 2 + 1;
