@@ -22,8 +22,9 @@
 # define TO_CONNECT 4
 # define MSG_TURN "Your turn (Input the column ID you want to put.)"
 # define MSG_RANGE "Unable to put (the column is out of range.)"
-# define MSG_FULL "Unable to put (the column is full.)"
-# define MSG_WIN "You win!"
+# define MSG_FULL "Unable to put (the column is full filled.)"
+# define MSG_WIN "You WIN!"
+# define MSG_DRAW "DRAW GAME!"
 
 # define clr		printf("\033[2J") // Clear terminal
 # define clr_right	printf("\033[0K") // Clear from the cursor to end of line
@@ -47,6 +48,7 @@ extern const unsigned char	g_key_col[];
 t_board	*board_init(void);
 void	board_term(t_board *board);
 t_board	*put_stone(t_board *board, int col);
+int		check_filled(t_board *board);
 t_board	*judge(t_board *board, int col, int row);
 void	display(t_board *board);
 int		control(void);

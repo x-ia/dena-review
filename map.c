@@ -58,6 +58,20 @@ t_board	*put_stone(t_board *board, int col)
 	return (board);
 }
 
+int	check_filled(t_board *board)
+{
+	int	col;
+
+	col = 0;
+	while (col < COLS)
+	{
+		if (board->cell[col][ROWS - 1] == 0)
+			return (0);
+		col++;
+	}
+	return (1);
+}
+
 void	board_term(t_board *board)
 {
 	free (board);
