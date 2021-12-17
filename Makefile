@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME	= 4inrow
-SRC		= main.c map.c disp.c ctrl.c kbhit.c
+SRC		= main.c map.c judge.c disp.c ctrl.c kbhit.c
 CFLAGS	= -g -fsanitize=address -Wall -Wextra -Werror
 CC		= gcc
 RM		= rm -f
@@ -19,11 +19,8 @@ RM		= rm -f
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) -o $@ $^
 all: $(NAME)
-bonus: $(BONUS)
 clean:
-	$(RM) $(OBJ)
 fclean:
-	$(RM) $(OBJ)
 	$(RM) $(NAME)
 re: fclean all
 

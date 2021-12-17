@@ -1,8 +1,20 @@
-#include "4inrow.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   judge.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#             */
+/*   Updated: 2021/11/29 04:39:38 by ykosaka          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fourinrow.h"
 
 int	judge_horizon(t_board *board, int row)
 {
-	int x;
+	int	x;
 	int	connected;
 
 	x = 0;
@@ -22,7 +34,7 @@ int	judge_horizon(t_board *board, int row)
 
 int	judge_vertic(t_board *board, int col)
 {
-	int y;
+	int	y;
 	int	connected;
 
 	y = 0;
@@ -42,8 +54,8 @@ int	judge_vertic(t_board *board, int col)
 
 int	judge_ascend(t_board *board, int col, int row)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 	int	connected;
 
 	x = 0;
@@ -69,8 +81,8 @@ int	judge_ascend(t_board *board, int col, int row)
 
 int	judge_descend(t_board *board, int col, int row)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 	int	connected;
 
 	x = 0;

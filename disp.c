@@ -1,4 +1,16 @@
-#include "4inrow.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   disp.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#             */
+/*   Updated: 2021/11/29 04:39:38 by ykosaka          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fourinrow.h"
 
 void	display(t_board *board)
 {
@@ -14,7 +26,7 @@ void	display(t_board *board)
 		printf("%d | ", row);
 		while (col < COLS)
 		{
-			printf("%d | ", board->cell[col][row]);
+			printf("%c | ", g_sym_stone[board->cell[col][row]]);
 			col++;
 		}
 		col = 0;
@@ -30,10 +42,10 @@ void	display(t_board *board)
 	col = 0;
 	while (col < COLS)
 	{
-		printf("  %d ", col);
+		printf("  %c ", toupper(g_key_col[col]));
 		col++;
 	}
 	printf("\n\n");
-	clr_line;
+	clr_line();
 	printf("Player %d: %s\n", board->status, board->msg);
 }

@@ -1,30 +1,33 @@
-#include "4inrow.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ctrl.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#             */
+/*   Updated: 2021/11/29 04:39:38 by ykosaka          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fourinrow.h"
 
 int	control(void)
 {
 	char	hit;
+	int		i;
 
+	i = 0;
 	hit = waitkb();
-	switch(hit)
+	while (i < COLS)
 	{
-		case 'a':
-			return(0);
-		case 's':
-			return(1);
-		case 'd':
-			return(2);
-		case 'f':
-			return(3);
-		case 'j':
-			return(4);
-		case 'k':
-			return(5);
-		case 'l':
-			return(6);
-		case 'q':
-			return(-9);
-		case 'z':
-			return(-2);
+		if (hit == g_key_col[i])
+			return (i);
+		i++;
 	}
+	if (hit == 'q')
+		return (-9);
+	if (hit == 'z')
+		return (-2);
 	return (-1);
 }

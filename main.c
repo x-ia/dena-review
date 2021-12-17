@@ -1,14 +1,29 @@
-#include "4inrow.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#             */
+/*   Updated: 2021/11/29 04:39:38 by ykosaka          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fourinrow.h"
+
+const unsigned char	g_sym_stone[] = {' ', 'o', 'x'};
+const unsigned char	g_key_col[] = {'a', 's', 'd', 'f', 'j', 'k', 'l'};
 
 int	main(void)
 {
 	t_board	*board;
-	int	input;
-	int	i;
+	int		input;
+	int		i;
 
 	i = 0;
-	board = board_init(ROWS, COLS);
-	while(board->status > 0)
+	board = board_init();
+	while (board->status > 0)
 	{
 		display(board);
 		input = control();

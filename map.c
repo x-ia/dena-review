@@ -1,6 +1,18 @@
-#include "4inrow.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykosaka <ykosaka@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/16 16:52:37 by ykosaka           #+#    #+#             */
+/*   Updated: 2021/11/29 04:39:38 by ykosaka          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_board	*board_init()
+#include "fourinrow.h"
+
+t_board	*board_init(void)
 {
 	t_board	*board;
 	int		row;
@@ -8,7 +20,7 @@ t_board	*board_init()
 
 	board = malloc(sizeof(t_board));
 	row = 0;
-	while(row < ROWS)
+	while (row < ROWS)
 	{
 		col = 0;
 		while (col < COLS)
