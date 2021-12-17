@@ -12,10 +12,12 @@ int	main(void)
 	{
 		display(board);
 		input = control();
-		printf("input: %d\n", input);
+		board = put_stone(board, input);
+		up(ROWS * 2 + 4);
 		i++;
 	}
-	printf("%s", board->msg);
+	board->status = -board->status;
+	display(board);
 	board_term(board);
 	return (0);
 }

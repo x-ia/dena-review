@@ -2,11 +2,10 @@
 
 int	control(void)
 {
-	char	key;
+	char	hit;
 
-	key = waitkb();
-//	printf("%c", key);
-	switch(key)
+	hit = waitkb();
+	switch(hit)
 	{
 		case 'a':
 			return(0);

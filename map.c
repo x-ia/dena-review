@@ -13,13 +13,13 @@ t_board	*board_init()
 		col = 0;
 		while (col < COLS)
 		{
-			board->cell[row][col] = 0;
+			board->cell[col][row] = 0;
 			col++;
 		}
 		row++;
 	}
 	board->status = 1;
-	board->msg = "Turn of player 1";
+	board->msg = MSG_TURN;
 	return (board);
 }
 
@@ -29,26 +29,20 @@ t_board	*put_stone(t_board *board, int col)
 
 	if (col < 0 || col >= COLS)
 	{
-		board->msg = "Unable to put (the column is out of range.)";
+		board->msg = MSG_RANGE;
 		return (board);
 	}
 	row = 0;
 	while (row < ROWS)
 	{
-		if (board->cell[row][col] == 0)
+		if (board->cell[col][row] == 0)
 		{
-			board->cell[row][col] = board->status;
-			return (judge_stone(board, col, row));
+			board->cell[col][row] = board->status;
+			return (judge(board, col, row));
 		}
 		row++;
 	}
-	board->msg = "Unable to put (the column is full.)";
-	return (board);
-}
-
-t_board	*judge_stone(t_board *board, int col, int row)
-{
-	printf("%d %d", col, row);
+	board->msg = MSG_FULL;
 	return (board);
 }
 

@@ -5,31 +5,35 @@ void	display(t_board *board)
 	int	row;
 	int	col;
 
-//	clr;
-	row = 0;
-	while (row < ROWS)
+	printf("\n");
+	row = ROWS;
+	while (row > 0)
 	{
+		row--;
 		col = 0;
+		printf("%d | ", row);
 		while (col < COLS)
 		{
-			printf("| %d ", board->cell[row][col]);
+			printf("%d | ", board->cell[col][row]);
 			col++;
 		}
-		printf("|\n");
 		col = 0;
+		printf("\n  -");
 		while (col < COLS)
 		{
 			printf("----");
 			col++;
 		}
-		printf("-\n");
-		row++;
+		printf("\n");
 	}
+	printf("  ");
 	col = 0;
 	while (col < COLS)
 	{
 		printf("  %d ", col);
 		col++;
 	}
-	printf("\n\n%s\n", board->msg);
+	printf("\n\n");
+	clr_line;
+	printf("Player %d: %s\n", board->status, board->msg);
 }
