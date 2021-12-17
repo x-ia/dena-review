@@ -26,7 +26,7 @@ int	main(void)
 		display(board);
 		input = control();
 		board = put_stone(board, input);
-		up(ROWS * 2 + 4);
+//		up(ROWS * 2 + 4);
 	}
 	board->status = -board->status;
 	display(board);

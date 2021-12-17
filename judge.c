@@ -39,7 +39,7 @@ int	judge_vertic(t_board *board, int col)
 
 	y = 0;
 	connected = 0;
-	while (y < COLS && connected < TO_CONNECT)
+	while (y < ROWS && connected < TO_CONNECT)
 	{
 		if (board->cell[col][y] == board->status)
 			connected++;
