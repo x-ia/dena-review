@@ -16,7 +16,7 @@ make
 ```
 
 ## How to play
-On your turn hit the key same as column ID to put a stone.
+On your turn, hit the key same as column ID to put a stone.
 
 ## Screen image
 ```
